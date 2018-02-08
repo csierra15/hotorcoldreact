@@ -44,6 +44,7 @@ export default class App extends Component {
         console.log('something');
         return canAdd = false;
       }
+      return canAdd;
     });
 
     if (canAdd) {
