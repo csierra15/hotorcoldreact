@@ -17,7 +17,7 @@ const guess = (state=initialState, action) => {
         number
       }
 
-      this.state.guesses.map(guess => {
+      state.guesses.map(guess => {
         if (guess.number === number) {
           return canAdd = false;
           feedback = 'You already guessed that!'
@@ -26,9 +26,9 @@ const guess = (state=initialState, action) => {
       });
 
       number = parseInt(number, 10);
-      const difference = Math.abs(number - this.state.answer);
+      const difference = Math.abs(number - state.answer);
       if (canAdd) {
-        this.state.guesses.push(guess);
+        state.guesses.push(guess);
 
         if (difference >= 50) {
         feedback = 'ice cold!';

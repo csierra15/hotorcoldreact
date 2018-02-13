@@ -5,6 +5,6 @@ import GuessCount from './GuessCount'
 
 describe('<GuessCount />', () => {
   it('Renders without crashing - smoke test', () => {
-    shallow(<GuessCount guesses={[]} />)
+    shallow(<GuessCount />)
   })
 })
