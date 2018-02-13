@@ -1,5 +1,5 @@
 const MAKE_GUESS = 'MAKE_GUESS'
-export const makeGuess = (number) => ({
+export const makeGuess = number => ({
   type: MAKE_GUESS,
   number
 })
