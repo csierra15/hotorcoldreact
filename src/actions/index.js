@@ -1,12 +1,7 @@
 const MAKE_GUESS = 'MAKE_GUESS'
-export const makeGuess = number => ({
+export const makeGuess = guess => ({
   type: MAKE_GUESS,
-  number
-})
-
-const GET_FEEDBACK = 'GET_FEEDBACK'
-export const giveFeedback = () => ({
-  type: GET_FEEDBACK
+  guess
 })
 
 const NEW_GAME = 'NEW_GAME'

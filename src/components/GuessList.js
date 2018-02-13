@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-export default function GuessList({ guesses }) {
+const GuessList = ({ guesses }) => {
 	return (
 		<div className="guessList">
 			{guesses.map((guess, index) => (
@@ -12,3 +12,9 @@ export default function GuessList({ guesses }) {
 		</div>
 	);
 }
+
+const mapStateToProps = state => ({
+	guesses: state.guesses
+})
+
+export default connect(mapStateToProps)(GuessList);
