@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const GuessList = ({ guesses }) => {
 	return (
@@ -14,7 +14,7 @@ const GuessList = ({ guesses }) => {
 }
 
 const mapStateToProps = state => ({
-	guesses: state.guesses
+	guesses: state.guess.guesses
 })
 
 export default connect(mapStateToProps)(GuessList);

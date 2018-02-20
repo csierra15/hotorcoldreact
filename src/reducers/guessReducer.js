@@ -1,11 +1,10 @@
-const initialState = [
-  {
+const initialState = {
     guesses: [],
     feedback: 'Make your guess!',
     guessCount: '0',
     answer: Math.floor(Math.random()*100) + 1
-  }
-]
+}
+
 
 const guess = (state=initialState, action) => {
   switch(action.type) {
