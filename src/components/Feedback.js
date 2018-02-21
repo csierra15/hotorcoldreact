@@ -10,7 +10,7 @@ const Feedback = ({ feedback }) => {
 }
 
 const mapStateToProps = state => ({
-  feedback: state.feedback
-});
+  feedback: state.guess.feedback
+})
 
 export default connect(mapStateToProps)(Feedback);

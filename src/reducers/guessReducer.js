@@ -1,3 +1,5 @@
+import {MAKE_GUESS} from '../actions'
+
 const initialState = {
     guesses: [],
     feedback: 'Make your guess!',
@@ -9,25 +11,31 @@ const initialState = {
 const guess = (state=initialState, action) => {
   switch(action.type) {
     case 'MAKE_GUESS':
+
       let feedback, number
-      let canAdd = true;
+
+      number = parseInt(number, 10)
+
       const guess = {
         id: Math.random(),
         number
       }
 
+      let canAdd = true
+
       state.guesses.map(guess => {
         if (guess.number === number) {
-          return canAdd = false;
-          feedback = 'You already guessed that!'
+
+          return Object.assign({}, state, {
+            feedback: 'You already guessed that!'
+          })
+          return canAdd = false
         }
         return canAdd;
       });
 
-      number = parseInt(number, 10);
       const difference = Math.abs(number - state.answer);
       if (canAdd) {
-        state.guesses.push(guess);
 
         if (difference >= 50) {
         feedback = 'ice cold!';
@@ -38,7 +46,7 @@ const guess = (state=initialState, action) => {
         } else if (difference >= 1) {
           feedback = 'hot!';
         } else {
-          feedback = 'FIRE! You got it!';
+          feedback = 'fire!';
         }
 
         return Object.assign({}, state, {
