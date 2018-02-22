@@ -14,7 +14,7 @@ const guess = (state=initialState, action) => {
 
       let feedback, number
 
-      number = parseInt(number, 10)
+      number = action.guess
 
       const guess = {
         id: Math.random(),
